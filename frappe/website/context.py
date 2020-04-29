@@ -118,6 +118,10 @@ def build_context(context):
 	if context.title_prefix and context.title and not context.title.startswith(context.title_prefix):
 		context.title = '{0} - {1}'.format(context.title_prefix, context.title)
 
+	#pfg
+	for update_website_context in frappe.get_hooks("update_website_context_all") or []:
+		frappe.get_attr(update_website_context)(context)
+
 	return context
 
 def load_sidebar(context, sidebar_json_path):

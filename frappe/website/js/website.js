@@ -429,6 +429,7 @@ $(document).ready(function() {
 
 $(document).on("page-change", function() {
 	$(document).trigger("apply_permissions");
+	/*PFG:
 	$('.dropdown-toggle').dropdown();
 
 	//multilevel dropdown fix
@@ -436,6 +437,7 @@ $(document).on("page-change", function() {
 		e.stopPropagation();
 		$(this).parent().parent().parent().addClass('open');
 	});
+	*/
 
 	$.extend(frappe, frappe.get_cookies());
 	frappe.session = {'user': frappe.user_id};
