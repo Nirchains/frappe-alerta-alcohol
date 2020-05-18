@@ -50,7 +50,8 @@ frappe.ui.form.on('Website Settings', {
 		var main_items = [''];
 		for (var i in items) {
 			var d = items[i];
-			if(!d.url && d.label) {
+			//PFG: if(!d.url && d.label) {
+			if(d.label) {
 				main_items.push(d.label);
 			}
 		}
